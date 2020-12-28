@@ -11,7 +11,7 @@ const consoleMessages = store => next => action => {
     return result;
 };
 
-
-export default (initialState = {}) => {
+var storeFactory = (initialState = {}) => {
     return applyMiddleware(thunk, consoleMessages)(createStore)(masterReducer, initialState);
 };
+export default storeFactory;

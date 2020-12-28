@@ -1,14 +1,23 @@
+// PACKAGES
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+// MODULES
+import state from './store/initial-state.json';
+import storeFactory from './store';
+import { recoverAuth } from './controllers/user-controller';
 
-
-
+// RECOVER LOGIN STATE IF THERE EXISTS A TOKEN
+var loginState = recoverAuth(state);
+var store = storeFactory(loginState);
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
