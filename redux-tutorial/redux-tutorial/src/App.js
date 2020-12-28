@@ -4,20 +4,15 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PrivateRoute from './components/common/PrivateRoute';
 // import { ToastContainer, toast, Slide } from "react-toastify";
 // MODULES
-import { userLoginRequest } from './services/user-service';
+import LoginPage from './components/public/LoginPage';
+import RegisterPage from './components/public/RegisterPage';
 // STYLES
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const LoginPage = () => <div>Login Page</div>
-const RegisterPage = () => <div>Register Page</div>
 const MainPage = () => <div>Main Page</div>
 
 class App extends Component {
-
-  componentDidMount() {
-    userLoginRequest("admin@mail.com", "admin");
-  }
 
   render() {
     return (

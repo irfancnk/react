@@ -11,7 +11,6 @@ function userLoginRequest(login, password) {
             { login, password }
         );
         loginPromise.then(function ({data}) {
-            console.log(data);
             return resolve(data)
         }, function (error) {
             return reject(error)
@@ -34,19 +33,7 @@ function userRegisterRequest(name, password, email) {
     });
 }
 
-
-function setAuthenticationToken(token) {
-    axios.defaults.timeout = 15000;
-    if (token) {
-        axios.defaults.headers.common.Authorization = token;
-    } else {
-        delete axios.defaults.headers.common.Authorization;
-    }
-}
-
-
 export {
-    setAuthenticationToken,
     userLoginRequest,
     userRegisterRequest
 };
