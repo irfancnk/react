@@ -1,4 +1,4 @@
-import appReducer from '../reducers';
+import masterReducer from '../reducers';
 import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 
@@ -13,5 +13,5 @@ const consoleMessages = store => next => action => {
 
 
 export default (initialState = {}) => {
-    return applyMiddleware(thunk, consoleMessages)(createStore)(appReducer, initialState);
+    return applyMiddleware(thunk, consoleMessages)(createStore)(masterReducer, initialState);
 };
