@@ -1,0 +1,55 @@
+.login-container {
+    background-color: var(--c-dark-theme);
+}
+
+.login-row {
+    background-color: var(--c-light-theme);
+}
+
+.login-column-header {
+    height: 25%;
+    background-color: var(--c-border);
+    border-bottom-right-radius: 40%;
+    border-bottom-left-radius: 40%;
+}
+
+.login-column-body {
+    height: 60%;
+    border-bottom: 10px solid var(--c-border);
+}
+
+.login-column-footer {
+    height: 15%;
+    background-color: var(--c-dark-theme);
+}
+
+.login-column-circle {
+    height: 95%;
+    background-color: var(--c-dark-theme);
+    border-bottom-right-radius: 45%;
+    border-bottom-left-radius: 45%;
+}
+
+.login-card {
+    height: 60%;
+    min-height: 300px;
+    max-height: 600px;
+    width: 100%;
+    min-width: 200px;
+    max-width: 600px;
+}
+
+.login-text-label {
+    font-weight: bold;
+    border-bottom: 1px solid var(--c-border);
+    cursor: pointer;
+}
+
+.login-or-label {
+    color: var(--c-border);
+}
+
+.login-link-style:hover {
+    text-decoration: none;
+}
+

@@ -18,11 +18,11 @@ function userLoginRequest(login, password) {
     });
 }
 
-function userRegisterRequest(name, password, email) {
+function userRegisterRequest(email, name, password) {
     return new Promise(function (resolve, reject) {
         let registerPromise = axios.post(
-            getProxy() + "/users/login",
-            { name, email, password }
+            getProxy() + "/users/register",
+            { email, name, password }
         );
         registerPromise.then(function ({data}) {
             console.log(data);

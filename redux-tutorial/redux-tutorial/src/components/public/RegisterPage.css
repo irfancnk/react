@@ -1,0 +1,54 @@
+.register-container {
+    background-color: var(--c-dark-theme);
+}
+
+.register-row {
+    background-color: var(--c-light-theme);
+}
+
+.register-column-header {
+    height: 25%;
+    background-color: var(--c-dark-theme);
+}
+
+.register-column-body {
+    height: 60%;
+    border-top: 10px solid var(--c-border);
+    border-bottom: 10px solid var(--c-border);
+}
+
+.register-column-footer {
+    height: 15%;
+    background-color: var(--c-dark-theme);
+}
+
+.register-column-circle {
+    height: 95%;
+    background-color: var(--c-dark-theme);
+    border-bottom-right-radius: 45%;
+    border-bottom-left-radius: 45%;
+}
+
+.register-card {
+    height: 60%;
+    min-height: 300px;
+    max-height: 600px;
+    width: 100%;
+    min-width: 200px;
+    max-width: 600px;
+}
+
+.register-text-label {
+    font-weight: bold;
+    border-bottom: 1px solid var(--c-border);
+    cursor: pointer;
+}
+
+.register-or-label {
+    color: var(--c-border);
+}
+
+.register-link-style:hover {
+    text-decoration: none;
+}
+

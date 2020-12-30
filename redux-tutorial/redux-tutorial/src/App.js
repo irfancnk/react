@@ -6,11 +6,11 @@ import PrivateRoute from './components/common/PrivateRoute';
 // MODULES
 import LoginPage from './components/public/LoginPage';
 import RegisterPage from './components/public/RegisterPage';
+import MainPage from './components/private/MainPage';
 // STYLES
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const MainPage = () => <div>Main Page</div>
 
 class App extends Component {
 

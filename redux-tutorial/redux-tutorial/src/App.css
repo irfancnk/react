@@ -4,10 +4,9 @@
   width: 100%;
 }
 
-.test1 {
-  background-color: tomato;
-}
 
-.test2 {
-  background-color:blue;
+:root {
+  --c-dark-theme: rgb(50,46,42);
+  --c-border: rgb(186,144,104);
+  --c-light-theme: rgb(232,233,226);
 }
