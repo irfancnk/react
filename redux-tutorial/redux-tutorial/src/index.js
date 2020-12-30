@@ -14,11 +14,10 @@ import { recoverAuth } from './controllers/user-controller';
 var loginState = recoverAuth(state);
 var store = storeFactory(loginState);
 ReactDOM.render(
-  <React.StrictMode>
     <Provider store={store}>
       <App />
     </Provider>
-  </React.StrictMode>,
+  ,
   document.getElementById('root')
 );
 

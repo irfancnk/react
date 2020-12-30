@@ -22,33 +22,18 @@
     background-color: var(--c-dark-theme);
 }
 
-.main-column-circle {
-    height: 95%;
-    background-color: var(--c-dark-theme);
-    border-bottom-right-radius: 45%;
-    border-bottom-left-radius: 45%;
-}
-
-.main-card {
-    height: 60%;
-    min-height: 300px;
-    max-height: 600px;
-    width: 100%;
-    min-width: 200px;
-    max-width: 600px;
-}
-
-.main-text-label {
-    font-weight: bold;
-    border-bottom: 1px solid var(--c-border);
-    cursor: pointer;
-}
-
-.main-or-label {
-    color: var(--c-border);
-}
 
 .main-link-style:hover {
     text-decoration: none;
 }
 
+.image-tile {
+    width: 100%; 
+    border-radius: 20px;
+}
+
+.image-tile:hover {
+    transform: scale(1.01);
+    transition: 0.3s;
+    cursor: pointer;
+}

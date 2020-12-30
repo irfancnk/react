@@ -1,4 +1,5 @@
 // PACKAGES
+import { toast } from "react-toastify";
 // MODULES
 import { getCarListRequest } from '../services/car-service';
 import {
@@ -24,6 +25,15 @@ function getCarList() {
     };
 }
 
+function likeContent() {
+    return function (dispatch) {
+        // MAKE API CALL THEN SHOW NOTIFICATION
+        // LOGIC STORED HERE
+        toast.success("Image added to your favourites.");
+    }
+}
+
 export {
-    getCarList
+    getCarList,
+    likeContent
 };

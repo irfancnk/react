@@ -2,13 +2,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // MODULES
+import Loading from '../common/Loading';
 import PrimaryButton from '../common/PrimaryButton';
 import SecondaryDropdown from '../common/SecondaryDropdown';
 import { userLogout } from '../../controllers/user-controller';
 import { getCarList } from '../../controllers/car-controller';
-
+import { carDetailModalStateChanged } from '../../actions/actions';
+import { carDetailModalCarChanged } from '../../actions/actions';
 // STYLES
 import './MainPage.css'
+
 
 class MainPage extends Component {
 
@@ -20,12 +23,18 @@ class MainPage extends Component {
         this.props.dispatcher(userLogout())
     }
 
+    onImageClickCallback(item) {
+        this.props.dispatcher(carDetailModalCarChanged(item));
+        this.props.dispatcher(carDetailModalStateChanged(true));
+    }
+
+
     createColumn(cars, key) {
         return (
             <div key={key} className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                 {cars.map((item, index) => {
                     return (
-                        <img className="py-2" key={index} src={item.imageURL} alt="Car" style={{ width: "100%", borderRadius: "20px" }} />
+                        <img className="image-tile py-2" key={index} src={item.imageURL} alt="Car" onClick={() => this.onImageClickCallback(item)} />
                     );
                 })}
             </div>
@@ -43,7 +52,6 @@ class MainPage extends Component {
             let iMode = i % 3;
             columns[`column${iMode}`].push(this.props.mainPage.carList[i]);
         }
-        console.log(columns);
         createdColumns.push(this.createColumn(columns.column0, 0));
         createdColumns.push(this.createColumn(columns.column1, 1));
         createdColumns.push(this.createColumn(columns.column2, 2));
@@ -51,6 +59,12 @@ class MainPage extends Component {
     }
 
     render() {
+        if (this.props.mainPage.requestInProgress) {
+            return (
+                <Loading />
+            );
+        }
+
         return (
             <div className="main-container container-fluid h-100 m-0 p-0">
                 <div className="main-row row h-100 m-0 p-0">
@@ -63,7 +77,7 @@ class MainPage extends Component {
                     </div>
                     <div className="main-column-body col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 m-0 p-0">
                         <div className="container-fluid h-100 m-0 p-0">
-                            <div className="row h-100 m-0 p-0" style={{overflowY: "scroll"}}>
+                            <div className="row h-100 m-0 p-0" style={{ overflowY: "scroll" }}>
                                 {this.mapCards()}
                             </div>
                         </div>

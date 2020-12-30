@@ -31,3 +31,17 @@ export const mainPageCarListChanged = (value) => ({
     payload: value
 });
 
+export const carDetailModalStateChanged = (value) => ({
+    type: ActionEnum.CAR_DETAIL_MODAL_STATE_CHANGED,
+    payload: value
+});
+
+export const carDetailModalCarChanged = (value) => ({
+    type: ActionEnum.CAR_DETAIL_MODAL_CAR_CHANGED,
+    payload: value
+});
+
+export const warningModalStateChanged = (value) => ({
+    type: ActionEnum.WARNING_MODAL_STATE_CHANGED,
+    payload: value
+});

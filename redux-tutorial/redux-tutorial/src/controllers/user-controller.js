@@ -7,7 +7,8 @@ import {
     loginPageRequestStatusChanged,
     applicationUserLogin,
     registerPageRequestStatusChanged,
-    applicationUserLogout
+    applicationUserLogout,
+    warningModalStateChanged
 } from '../actions/actions';
 
 function recoverAuth(state) {
@@ -32,6 +33,7 @@ function userLogin(email, password) {
                 console.log(loginResult);
             }, function (loginError) {
                 console.warn(loginError);
+                dispatch(warningModalStateChanged);
             })
             .finally(function () {
                 dispatch(loginPageRequestStatusChanged(false));

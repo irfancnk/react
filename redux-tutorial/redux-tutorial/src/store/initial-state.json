@@ -12,6 +12,15 @@
     "mainPage": {
         "requestInProgress": false,
         "carList": []
+    },
+    "modals": {
+        "carDetailModal": {
+            "isOpen": false,
+            "car": null
+        },
+        "warningModal": {
+            "isOpen": true
+        }
     }
 
 }
