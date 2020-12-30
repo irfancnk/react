@@ -25,3 +25,9 @@ export const mainPageRequestStatusChanged = (value) => ({
     type: ActionEnum.MAIN_PAGE_REQUEST_STATUS_CHANGED,
     payload: value
 });
+
+export const mainPageCarListChanged = (value) => ({
+    type: ActionEnum.MAIN_PAGE_CAR_LIST_CHANGED,
+    payload: value
+});
+

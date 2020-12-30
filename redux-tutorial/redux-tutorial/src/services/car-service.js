@@ -10,7 +10,6 @@ function getCarListRequest(login, password) {
             getProxy() + "/data/cars"
         );
         carListPromise.then(function ({data}) {
-            console.log(data);
             return resolve(data)
         }, function (error) {
             return reject(error)

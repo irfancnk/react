@@ -6,6 +6,9 @@ export const mainPage = (state = {}, action) => {
         case ActionEnum.MAIN_PAGE_REQUEST_STATUS_CHANGED:
             state.requestInProgress = action.payload;
             return state;
+        case ActionEnum.MAIN_PAGE_CAR_LIST_CHANGED:
+            state.carList = action.payload;
+            return state;
         default:
             return state;
     }

@@ -10,7 +10,8 @@
         "requestInProgress": false
     },
     "mainPage": {
-        "requestInProgress": false
+        "requestInProgress": false,
+        "carList": []
     }
 
 }
