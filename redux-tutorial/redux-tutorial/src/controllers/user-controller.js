@@ -33,7 +33,7 @@ function userLogin(email, password) {
                 console.log(loginResult);
             }, function (loginError) {
                 console.warn(loginError);
-                dispatch(warningModalStateChanged);
+                dispatch(warningModalStateChanged(true));
             })
             .finally(function () {
                 dispatch(loginPageRequestStatusChanged(false));
