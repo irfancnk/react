@@ -1,12 +1,11 @@
+import produce from "immer";
 import ActionEnum from '../constants/action-enum';
 
-export const loginPage = (state = {}, action) => {
-    state = JSON.parse(JSON.stringify(state));
+export const loginPage = produce((state, action) => {
     switch (action.type) {
         case ActionEnum.LOGIN_PAGE_REQUEST_STATUS_CHANGED:
-            state.requestInProgress = action.payload;
-            return state;
+            state.requestInProgress = action.payload;            
+            return;
         default:
-            return state;
     }
-}
+}, {});

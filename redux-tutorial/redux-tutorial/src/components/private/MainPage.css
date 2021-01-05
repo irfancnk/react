@@ -23,17 +23,63 @@
 }
 
 
-.main-link-style:hover {
-    text-decoration: none;
+/* Masonry grid */
+.masonry {
+    transition: all 0.5s ease-in-out;
+    column-gap: 10px;
+    column-fill: balance;
 }
 
-.image-tile {
-    width: 100%; 
-    border-radius: 20px;
+/* Masonry item */
+.masonry .brick {
+    margin-bottom: 10px;
+    display: inline-block;
+    /* vertical-align: top; */
 }
 
-.image-tile:hover {
+/* Masonry image effects */
+.masonry .brick img {
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.masonry .brick:hover img {
+    opacity: 0.75;
     transform: scale(1.01);
     transition: 0.3s;
     cursor: pointer;
 }
+
+
+@media (max-width: 575.98px) {
+    .masonry {
+        column-count: 2;
+    }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .masonry {
+        column-count: 3;
+    }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .masonry {
+        column-count: 4;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .masonry {
+        column-count: 4;
+    }
+}
+@media(min-width: 1200px) and (max-width: 1600px) {
+    .masonry {
+        column-count: 6;
+    }
+}
+@media(min-width: 1600px) {
+    .masonry {
+        column-count: 6;
+    }
+}
+

@@ -1,15 +1,15 @@
+import produce from "immer";
 import ActionEnum from '../constants/action-enum';
 
-export const mainPage = (state = {}, action) => {
-    state = JSON.parse(JSON.stringify(state));
+export const mainPage = produce((state, action) => {
     switch (action.type) {
         case ActionEnum.MAIN_PAGE_REQUEST_STATUS_CHANGED:
             state.requestInProgress = action.payload;
-            return state;
+            return;
         case ActionEnum.MAIN_PAGE_CAR_LIST_CHANGED:
-            state.carList = action.payload;
-            return state;
+            state.carList = action.payload;            
+            return;
         default:
-            return state;
     }
-}
+}, {});
+

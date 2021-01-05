@@ -30,7 +30,6 @@ function userLogin(email, password) {
                 Cookies.remove('user-token');
                 Cookies.set('user-token', loginResult.email, { expires: in30Minutes });
                 dispatch(applicationUserLogin(loginResult.email));
-                console.log(loginResult);
             }, function (loginError) {
                 console.warn(loginError);
                 dispatch(warningModalStateChanged(true));

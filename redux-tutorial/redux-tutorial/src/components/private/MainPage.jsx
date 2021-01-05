@@ -28,34 +28,19 @@ class MainPage extends Component {
         this.props.dispatcher(carDetailModalStateChanged(true));
     }
 
-
-    createColumn(cars, key) {
-        return (
-            <div key={key} className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
-                {cars.map((item, index) => {
-                    return (
-                        <img className="image-tile py-2" key={index} src={item.imageURL} alt="Car" onClick={() => this.onImageClickCallback(item)} />
-                    );
-                })}
-            </div>
-        );
-    }
-
     mapCards() {
-        let columns = {
-            column0: [],
-            column1: [],
-            column2: []
-        };
-        let createdColumns = []
-        for (let i = 0; i < this.props.mainPage.carList.length; i++) {
-            let iMode = i % 3;
-            columns[`column${iMode}`].push(this.props.mainPage.carList[i]);
-        }
-        createdColumns.push(this.createColumn(columns.column0, 0));
-        createdColumns.push(this.createColumn(columns.column1, 1));
-        createdColumns.push(this.createColumn(columns.column2, 2));
-        return createdColumns;
+        let reversedCars = [...this.props.mainPage.carList].reverse();
+        let extendedCars = this.props.mainPage.carList.concat(reversedCars);
+        extendedCars = extendedCars.concat(reversedCars).concat(this.props.mainPage.carList);
+        return (
+            extendedCars.map((item, index) => {
+                return (
+                    <div className="brick" key={index}>
+                        <img className="image-tile" src={item.imageURL} alt="Car" onClick={() => this.onImageClickCallback(item)} />
+                    </div>
+                );
+            })
+        )
     }
 
     render() {
@@ -64,7 +49,6 @@ class MainPage extends Component {
                 <Loading />
             );
         }
-
         return (
             <div className="main-container container-fluid h-100 m-0 p-0">
                 <div className="main-row row h-100 m-0 p-0">
@@ -76,8 +60,8 @@ class MainPage extends Component {
                         </div>
                     </div>
                     <div className="main-column-body col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 m-0 p-0">
-                        <div className="container-fluid h-100 m-0 p-0">
-                            <div className="row h-100 m-0 p-0" style={{ overflowY: "scroll" }}>
+                        <div className="p-2 w-100 h-100" style={{ overflowY: "scroll" }}>
+                            <div className="masonry">
                                 {this.mapCards()}
                             </div>
                         </div>
